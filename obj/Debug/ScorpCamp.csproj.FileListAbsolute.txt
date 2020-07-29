@@ -1,0 +1,15 @@
+C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.exe.config
+C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.exe
+C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.pdb
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\MainWindow.g.cs
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\App.g.cs
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp_MarkupCompile.cache
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp_MarkupCompile.lref
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\MainWindow.baml
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.g.resources
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.Properties.Resources.resources
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.exe
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.pdb
