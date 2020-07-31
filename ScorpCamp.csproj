@@ -100,5 +100,32 @@
   <ItemGroup>
     <Resource Include="crisswithagun.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="glock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sentry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DrMilk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rat_wiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gun_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Library.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="heal_card_final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Rat_Gamer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SWORD_final.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

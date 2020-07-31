@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScorpCamp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
-    <Grid Name="GameArea"/>
+        Title="Master's Mischief" Height="720" Width="1280">
+	<Grid Name="GameArea">
+		<Image HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="1272" Source="SWORD_final.png" Stretch="Fill"/>
+	</Grid>
 </Window>
