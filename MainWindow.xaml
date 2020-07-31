@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Master's Mischief" Height="720" Width="1280">
 	<Grid Name="GameArea">
-		<Image HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="1272" Source="SWORD_final.png" Stretch="Fill"/>
+		<Image HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="1272" Source="milk_heal.png" Stretch="Fill"/>
 	</Grid>
 </Window>

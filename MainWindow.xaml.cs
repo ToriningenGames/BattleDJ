@@ -43,6 +43,9 @@ namespace ScorpCamp
                 Gun,
                 Heal,
                 Sword,
+                Bow,
+                MilkAtk,
+                MilkHeal
             }
         }
         
@@ -65,6 +68,23 @@ namespace ScorpCamp
                 cn = Card.CardName.Sword,
                 name = "Sword",
                 source = "SWORD_final.png",
+            },
+            new Card
+            {
+                cn = Card.CardName.Bow,
+                name = "Bow",
+                source = "Bow.png",
+            },
+            new Card
+            {
+                cn = Card.CardName.MilkAtk,
+                name = "Milk Attack",
+                source = "milk_atk.png",
+            },new Card
+            {
+                cn = Card.CardName.MilkHeal,
+                name = "Milk Heal",
+                source = "milk_heal.png",
             },
         };
 
@@ -107,7 +127,7 @@ namespace ScorpCamp
                 fightable = false,
             },
             new Preset
-            {//"Rat_Gamer.png"
+            {
                 character = characters.CrissWithAGun,
                 name = "Criss With a Gun",
                 source = "crisswithagun.png",
@@ -121,11 +141,10 @@ namespace ScorpCamp
                 character = characters.RatWizard,
                 name = "Rat Wizard",
                 source = "rat_wiz.png",
-                backgroundSource = "Library.jpg",
                 health = 40,
                 height = 250,
                 playable = false,
-                fightable = true,
+                fightable = false,
             },
             new Preset
             {
@@ -201,6 +220,42 @@ namespace ScorpCamp
                         enemy.health[0] += h;
                     }
                     break;
+                case Card.CardName.Bow:
+                    for (int i = 0; i < 2; i += 1)
+                    {
+                        h = 0 - rnd.Next(2, 4);
+                        if (turn)
+                        {
+                            player.health[0] += h;
+                        }
+                        else
+                        {
+                            enemy.health[0] += h;
+                        }
+                    }
+                    break;
+                case Card.CardName.MilkHeal:
+                    h = rnd.Next(5, 11);
+                    if (!turn)
+                    {
+                        player.health[0] += h;
+                    }
+                    else
+                    {
+                        enemy.health[0] += h;
+                    }
+                    break;
+                case Card.CardName.MilkAtk:
+                    h = 0 - rnd.Next(5, 11);
+                    if (turn)
+                    {
+                        player.health[0] += h;
+                    }
+                    else
+                    {
+                        enemy.health[0] += h;
+                    }
+                    break;
             }
 
             var rtrn = false;
@@ -243,8 +298,8 @@ namespace ScorpCamp
                     case characters.DrMilk:
                         p.deck = new Card[]
                         {
-                            cardById(Card.CardName.Heal),
-                            cardById(Card.CardName.Sword),
+                            cardById(Card.CardName.MilkAtk),
+                            cardById(Card.CardName.MilkHeal)
                         };
                         break;
                     case characters.RatWizard:
@@ -252,6 +307,7 @@ namespace ScorpCamp
                         {
                             cardById(Card.CardName.Heal),
                             cardById(Card.CardName.Sword),
+                            cardById(Card.CardName.Bow)
                         };
                         break;
                     case characters.CrissWithAGun:
@@ -264,15 +320,16 @@ namespace ScorpCamp
                         p.deck = new Card[]
                         {
                             cardById(Card.CardName.Heal),
+                            cardById(Card.CardName.Bow),
                             cardById(Card.CardName.Sword),
                         };
                         break;
                     case characters.RatGamer:
                         p.deck = new Card[]
                         {
-                            cardById(Card.CardName.Gun),
                             cardById(Card.CardName.Heal),
                             cardById(Card.CardName.Sword),
+                            cardById(Card.CardName.Bow),
                         };
                         break;
                 }
@@ -502,6 +559,9 @@ namespace ScorpCamp
                 case characters.RatWizard:
                     unlockFightable(characters.TheRatMaster);
                     break;
+                case characters.RatGamer:
+                    unlockFightable(characters.RatWizard);
+                    break;
             }
         }
 
@@ -643,7 +703,7 @@ namespace ScorpCamp
         {
             GameArea.Children.Clear();
             ImageBrush imbrsh = new ImageBrush();
-            imbrsh.ImageSource = sourceThis(presetById(enemy.character).backgroundSource);
+            //imbrsh.ImageSource = sourceThis("Sentry.jpg");
             GameArea.Background = imbrsh;
 
             showCombatants();
@@ -660,7 +720,11 @@ namespace ScorpCamp
                     CombatantSelectionStage();
                     break;
                 case "Play":
-                    if (!playCard(cardById(player.hand[handex].cn)))
+                    turn = false;
+                    bool result1 = !playCard(cardById(player.hand[handex].cn));
+                    turn = true;
+                    bool result2 = !playCard(cardById(enemy.hand[0].cn));
+                    if (result1 || result2)
                     {
                         handex = 0;
                         newHand();

@@ -127,5 +127,14 @@
   <ItemGroup>
     <Resource Include="SWORD_final.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="milk_atk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="milk_heal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
