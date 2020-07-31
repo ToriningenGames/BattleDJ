@@ -713,23 +713,23 @@ namespace ScorpCamp
         void buttonClick(object sender, RoutedEventArgs e)
         {
             Button s = (Button)sender;
-            switch (s.Content) 
+            switch (s.Content)
             {
                 case "Back":
                     currentSelector = 0;
                     CombatantSelectionStage();
                     break;
                 case "Play":
-                    turn = false;
-                    bool result1 = !playCard(cardById(player.hand[handex].cn));
-                    turn = true;
-                    bool result2 = !playCard(cardById(enemy.hand[0].cn));
-                    if (result1 || result2)
+                    if (!playCard(cardById(player.hand[handex].cn)))
                     {
-                        handex = 0;
-                        newHand();
-                        battleStage();
+                        if (!playCard(cardById(enemy.hand[0].cn)))
+                        {
+                            handex = 0;
+                            newHand();
+                            battleStage();
+                        }   
                     }
+                    
                     break;
                 case "Next Card":
                     handex += 1;
