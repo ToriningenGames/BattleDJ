@@ -25,41 +25,12 @@ namespace ScorpCamp
 
         Card[] cards = new Card[]
         {
-            new Card
-            {
-                cn = Card.CardName.Gun,
-                name = "Gun",
-                source = "gun_card.png",
-            },
-            new Card
-            {
-                cn = Card.CardName.Heal,
-                name = "Heal",
-                source = "heal_card_final.png",
-            },
-            new Card
-            {
-                cn = Card.CardName.Sword,
-                name = "Sword",
-                source = "SWORD_final.png",
-            },
-            new Card
-            {
-                cn = Card.CardName.Bow,
-                name = "Bow",
-                source = "Bow.png",
-            },
-            new Card
-            {
-                cn = Card.CardName.MilkAtk,
-                name = "Milk Attack",
-                source = "milk_atk.png",
-            },new Card
-            {
-                cn = Card.CardName.MilkHeal,
-                name = "Milk Heal",
-                source = "milk_heal.png",
-            },
+            new Card(CardType.Gun, "Gun", "gun_card.png"),
+            new Card(CardType.Heal, "Heal", "heal_card_final.png"),
+            new Card(CardType.Sword, "Sword", "SWORD_final.png"),
+            new Card(CardType.Bow, "Bow", "Bow.png"),
+            new Card(CardType.MilkAtk, "Milk Attack", "milk_atk.png"),
+            new Card(CardType.MilkHeal, "Milk Heal", "milk_heal.png")
         };
 
         //<Image x:Name="goni" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="228" Source="standard.png" Margin="991,85,0,0" RenderTransformOrigin="3.292,0.792" Grid.Column="1"/>
@@ -74,9 +45,9 @@ namespace ScorpCamp
         public bool playCard(Card c)
         {
             int h;
-            switch (c.cn)
+            switch (c.CardType)
             {
-                case Card.CardName.Gun:
+                case CardType.Gun:
                     h = 0;
                     if (!turn)
                     {
@@ -87,7 +58,7 @@ namespace ScorpCamp
                         player.health[0] = h;
                     }
                     break;
-                case Card.CardName.Heal:
+                case CardType.Heal:
                     h = 7;
                     if (!turn)
                     {
@@ -98,7 +69,7 @@ namespace ScorpCamp
                         enemy.health[0] += h;
                     }
                     break;
-                case Card.CardName.Sword:
+                case CardType.Sword:
                     h = 0 - rnd.Next(3, 8);
                     if (turn)
                     {
@@ -109,7 +80,7 @@ namespace ScorpCamp
                         enemy.health[0] += h;
                     }
                     break;
-                case Card.CardName.Bow:
+                case CardType.Bow:
                     for (int i = 0; i < 2; i += 1)
                     {
                         h = 0 - rnd.Next(2, 4);
@@ -123,7 +94,7 @@ namespace ScorpCamp
                         }
                     }
                     break;
-                case Card.CardName.MilkHeal:
+                case CardType.MilkHeal:
                     h = rnd.Next(5, 11);
                     if (!turn)
                     {
@@ -134,7 +105,7 @@ namespace ScorpCamp
                         enemy.health[0] += h;
                     }
                     break;
-                case Card.CardName.MilkAtk:
+                case CardType.MilkAtk:
                     h = 0 - rnd.Next(5, 11);
                     if (turn)
                     {
@@ -163,13 +134,14 @@ namespace ScorpCamp
             return rtrn;
         }
 
-        public Card cardById(Card.CardName arg)
+        public Card cardById(CardType arg)
         {
-            Card rtrn = new Card();
+            //Card rtrn = new Card();
+            Card rtrn = null;
 
             foreach (Card c in cards)
             {
-                if (c.cn == arg)
+                if (c.CardType == arg)
                 {
                     rtrn = c;
                 }
@@ -187,38 +159,38 @@ namespace ScorpCamp
                     case characters.DrMilk:
                         p.deck = new Card[]
                         {
-                            cardById(Card.CardName.MilkAtk),
-                            cardById(Card.CardName.MilkHeal)
+                            cardById(CardType.MilkAtk),
+                            cardById(CardType.MilkHeal)
                         };
                         break;
                     case characters.RatWizard:
                         p.deck = new Card[]
                         {
-                            cardById(Card.CardName.Heal),
-                            cardById(Card.CardName.Sword),
-                            cardById(Card.CardName.Bow)
+                            cardById(CardType.Heal),
+                            cardById(CardType.Sword),
+                            cardById(CardType.Bow)
                         };
                         break;
                     case characters.CrissWithAGun:
                         p.deck = new Card[]
                         {
-                            cardById(Card.CardName.Gun),
+                            cardById(CardType.Gun),
                         };
                         break;
                     case characters.TheRatMaster:
                         p.deck = new Card[]
                         {
-                            cardById(Card.CardName.Heal),
-                            cardById(Card.CardName.Bow),
-                            cardById(Card.CardName.Sword),
+                            cardById(CardType.Heal),
+                            cardById(CardType.Bow),
+                            cardById(CardType.Sword),
                         };
                         break;
                     case characters.RatGamer:
                         p.deck = new Card[]
                         {
-                            cardById(Card.CardName.Heal),
-                            cardById(Card.CardName.Sword),
-                            cardById(Card.CardName.Bow),
+                            cardById(CardType.Heal),
+                            cardById(CardType.Sword),
+                            cardById(CardType.Bow),
                         };
                         break;
                 }
@@ -412,7 +384,7 @@ namespace ScorpCamp
         {
             Label cardnum = new Label
             {
-                Content = string.Format("Card: {1}", player.hand[handex].name, handex),
+                Content = string.Format("Card: {1}", player.hand[handex].Name, handex),
                 Background = Brushes.Gray,
                 BorderBrush = Brushes.Blue,
                 BorderThickness = new Thickness(5),
@@ -427,7 +399,7 @@ namespace ScorpCamp
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
-                Source = sourceThis(player.hand[handex].source),
+                Source = sourceThis(player.hand[handex].Source),
                 Height = CARDHEIGHT,
                 Margin = new Thickness(0, 150, 0, 0),
             };
@@ -477,9 +449,9 @@ namespace ScorpCamp
                     CombatantSelectionStage();
                     break;
                 case "Play":
-                    if (!playCard(cardById(player.hand[handex].cn)))
+                    if (!playCard(cardById(player.hand[handex].CardType)))
                     {
-                        if (!playCard(cardById(enemy.hand[0].cn)))
+                        if (!playCard(cardById(enemy.hand[0].CardType)))
                         {
                             handex = 0;
                             newHand();
