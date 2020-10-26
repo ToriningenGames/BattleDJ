@@ -22,79 +22,6 @@ namespace ScorpCamp
 
         //<Image x:Name="goni" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="228" Source="standard.png" Margin="991,85,0,0" RenderTransformOrigin="3.292,0.792" Grid.Column="1"/>
         
-
-<<<<<<< HEAD
-        public class Preset
-        {
-            public string name;
-            public string source;
-            public string backgroundSource;
-            public int health;
-            public int height;
-            public Card[] deck;
-            public bool playable;
-            public bool fightable;
-            public characters character;
-        }
-
-        Combatant player = new Combatant();
-        Combatant enemy = new Combatant();
-
-        Preset[] presets = new Preset[]
-        {
-            new Preset
-            {
-                character = characters.DrMilk,
-                name = "Dr. Milk",
-                source = "DrMilk.png",
-                health = 50,
-                height = HUMANHEIGHT-1,
-                playable = true,
-                fightable = false,
-            },
-            new Preset
-            {
-                character = characters.TheRatMaster,
-                name = "The Rat Master",
-                source = "standard.png",
-                health = 55,
-                height = HUMANHEIGHT,
-                playable = false,
-                fightable = false,
-            },
-            new Preset
-            {
-                character = characters.CrissWithAGun,
-                name = "Criss With a Gun",
-                source = "crisswithagun.png",
-                health = 1000,
-                height = HUMANHEIGHT,
-                playable = false,
-                fightable = false,
-            },
-            new Preset
-            {
-                character = characters.RatWizard,
-                name = "Rat Wizard",
-                source = "rat_wiz.png",
-                health = 40,
-                height = 250,
-                playable = false,
-                fightable = false,
-            },
-            new Preset
-            {
-                character = characters.RatGamer,
-                name = "Rat Gamer",
-                source = "Rat_Gamer.png",
-                backgroundSource = "Library.jpg",
-                health = 35,
-                height = 300,
-                playable = false,
-                fightable = true,
-            }
-        };
-=======
         public class Card
         {
             public CardName cn;
@@ -150,8 +77,6 @@ namespace ScorpCamp
                 source = "milk_heal.png",
             },
         };
-
->>>>>>> 15d6564be3fb1df43b7ca864d058a86c214ec790
         
 
 
