@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.exe.config
 C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.exe
 C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.pdb
@@ -28,3 +29,35 @@ C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateReso
 C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
 C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.exe
 C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.pdb
+=======
+C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.exe.config
+C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.exe
+C:\Users\brent\source\repos\ScorpCamp\bin\Debug\ScorpCamp.pdb
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\MainWindow.g.cs
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\App.g.cs
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp_MarkupCompile.cache
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp_MarkupCompile.lref
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\MainWindow.baml
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.g.resources
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.Properties.Resources.resources
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.exe
+C:\Users\brent\source\repos\ScorpCamp\obj\Debug\ScorpCamp.pdb
+D:\Documents\Battle-DevJam\BattleDJ\bin\Debug\ScorpCamp.exe.config
+D:\Documents\Battle-DevJam\BattleDJ\bin\Debug\ScorpCamp.exe
+D:\Documents\Battle-DevJam\BattleDJ\bin\Debug\ScorpCamp.pdb
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\MainWindow.g.cs
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\App.g.cs
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.cache
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.lref
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\MainWindow.baml
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.g.resources
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.Properties.Resources.resources
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.exe
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.pdb
+>>>>>>> 435717437ef15d60e641f2d4eb5a56639684f179
