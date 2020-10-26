@@ -14,7 +14,6 @@ namespace ScorpCamp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public const int HUMANHEIGHT = 500;
         public const int CARDHEIGHT = 350;
         public Thickness PLAYERMARGIN = new Thickness(50, 0, 50, 0);
         public bool turn = false;
@@ -22,16 +21,9 @@ namespace ScorpCamp
         public int currentSelector;
 
         //<Image x:Name="goni" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="228" Source="standard.png" Margin="991,85,0,0" RenderTransformOrigin="3.292,0.792" Grid.Column="1"/>
-        public class Combatant
-        {
-            public Image pic;
-            public Label lbl;
-            public string Name;
-            public int[] health;
-            public Card[] hand;
-            public characters character;
-        }
+        
 
+<<<<<<< HEAD
         public class Preset
         {
             public string name;
@@ -102,15 +94,66 @@ namespace ScorpCamp
                 fightable = true,
             }
         };
-        
-        public enum characters
+=======
+        public class Card
         {
-            CrissWithAGun,
-            TheRatMaster,
-            DrMilk,
-            RatWizard,
-            RatGamer
+            public CardName cn;
+            public string name;
+            public string source;
+
+            public enum CardName
+            {
+                Gun,
+                Heal,
+                Sword,
+                Bow,
+                MilkAtk,
+                MilkHeal
+            }
+        }
+        
+        Card[] cards = new Card[]
+        {
+            new Card
+            {
+                cn = Card.CardName.Gun,
+                name = "Gun",
+                source = "gun_card.png",
+            },
+            new Card
+            { 
+                cn = Card.CardName.Heal,
+                name = "Heal",
+                source = "heal_card_final.png",
+            },
+            new Card
+            {
+                cn = Card.CardName.Sword,
+                name = "Sword",
+                source = "SWORD_final.png",
+            },
+            new Card
+            {
+                cn = Card.CardName.Bow,
+                name = "Bow",
+                source = "Bow.png",
+            },
+            new Card
+            {
+                cn = Card.CardName.MilkAtk,
+                name = "Milk Attack",
+                source = "milk_atk.png",
+            },new Card
+            {
+                cn = Card.CardName.MilkHeal,
+                name = "Milk Heal",
+                source = "milk_heal.png",
+            },
         };
+
+>>>>>>> 15d6564be3fb1df43b7ca864d058a86c214ec790
+        
+
 
         int[] players = new int[] { 0, 0 };
        

@@ -64,7 +64,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Class1.cs" />
+=======
+    <Compile Include="Combatant.cs" />
+>>>>>>> 15d6564be3fb1df43b7ca864d058a86c214ec790
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
