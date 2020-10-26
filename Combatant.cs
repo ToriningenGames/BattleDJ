@@ -1,21 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Text.RegularExpressions;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Effects;
+using System.Windows.Media.Imaging;
 
 namespace ScorpCamp
 {
-    class Combatant
+    public enum characters
     {
-        public enum characters
-        {
-            CrissWithAGun,
-            TheRatMaster,
-            DrMilk,
-            RatWizard,
-            RatGamer
-        };
+        CrissWithAGun,
+        TheRatMaster,
+        DrMilk,
+        RatWizard,
+        RatGamer
+    };
+
+
+    public class Combatant
+    {
 
         public Image pic;
         public Label lbl;
@@ -45,15 +50,17 @@ namespace ScorpCamp
             public bool fightable;
             public characters character;
 
-            Preset[] presets = new Preset[]
-       {
+        }
+
+        public static Preset[] presets = new Preset[]
+   {
             new Preset
             {
                 character = characters.DrMilk,
                 name = "Dr. Milk",
                 source = "DrMilk.png",
                 health = 50,
-                height = HUMANHEIGHT-1,
+                height = Preset.HUMANHEIGHT-1,
                 playable = true,
                 fightable = false,
             },
@@ -63,7 +70,7 @@ namespace ScorpCamp
                 name = "The Rat Master",
                 source = "standard.png",
                 health = 55,
-                height = HUMANHEIGHT,
+                height = Preset.HUMANHEIGHT,
                 playable = false,
                 fightable = false,
             },
@@ -73,7 +80,7 @@ namespace ScorpCamp
                 name = "Criss With a Gun",
                 source = "crisswithagun.png",
                 health = 1000,
-                height = HUMANHEIGHT,
+                height = Preset.HUMANHEIGHT,
                 playable = false,
                 fightable = false,
             },
@@ -98,12 +105,7 @@ namespace ScorpCamp
                 playable = false,
                 fightable = true,
             }
-       };
-        }
+   };
 
-        Combatant player = new Combatant();
-        Combatant enemy = new Combatant();
-
-       
     }
 }

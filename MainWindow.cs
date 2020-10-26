@@ -44,7 +44,7 @@ namespace ScorpCamp
 
             Label name = new Label
             {
-                Content = presets[players[currentSelector]].name,
+                Content = Combatant.presets[players[currentSelector]].name,
                 Background = Brushes.Gray,
                 BorderBrush = Brushes.Blue,
                 BorderThickness = new Thickness(5),
@@ -136,7 +136,7 @@ namespace ScorpCamp
                 Foreground = Brushes.Red,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
-                Content = string.Format("{0} Won!", presets[players[winner - 1]].name),
+                Content = string.Format("{0} Won!", Combatant.presets[players[winner - 1]].name),
             };
             GameArea.Children.Add(lbl);
 
@@ -173,7 +173,7 @@ namespace ScorpCamp
             return arg;
         }
 
-        public Combatant newCombatant(Preset preset, HorizontalAlignment side)
+        public Combatant newCombatant(Combatant.Preset preset, HorizontalAlignment side)
         {
             Combatant rtrn = new Combatant();
 

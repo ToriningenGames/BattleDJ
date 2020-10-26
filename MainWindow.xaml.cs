@@ -20,25 +20,9 @@ namespace ScorpCamp
         Random rnd;
         public int currentSelector;
 
-        //<Image x:Name="goni" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="228" Source="standard.png" Margin="991,85,0,0" RenderTransformOrigin="3.292,0.792" Grid.Column="1"/>
-        
-        public class Card
-        {
-            public CardName cn;
-            public string name;
-            public string source;
+        Combatant player = new Combatant();
+        Combatant enemy = new Combatant();
 
-            public enum CardName
-            {
-                Gun,
-                Heal,
-                Sword,
-                Bow,
-                MilkAtk,
-                MilkHeal
-            }
-        }
-        
         Card[] cards = new Card[]
         {
             new Card
@@ -48,7 +32,7 @@ namespace ScorpCamp
                 source = "gun_card.png",
             },
             new Card
-            { 
+            {
                 cn = Card.CardName.Heal,
                 name = "Heal",
                 source = "heal_card_final.png",
@@ -77,7 +61,11 @@ namespace ScorpCamp
                 source = "milk_heal.png",
             },
         };
-        
+
+        //<Image x:Name="goni" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="228" Source="standard.png" Margin="991,85,0,0" RenderTransformOrigin="3.292,0.792" Grid.Column="1"/>
+
+
+
 
 
         int[] players = new int[] { 0, 0 };
@@ -192,7 +180,7 @@ namespace ScorpCamp
 
         public void giveCards()
         {
-            foreach(Preset p in presets)
+            foreach(Combatant.Preset p in Combatant.presets)
             {
                 switch (p.character)
                 {
@@ -281,7 +269,7 @@ namespace ScorpCamp
 
         public void unlockAll(object sender, EventArgs e)
         {
-            foreach (Preset p in presets)
+            foreach (Combatant.Preset p in Combatant.presets)
             {
                 unlockPlayable(p.character);
                 unlockFightable(p.character);
@@ -290,25 +278,25 @@ namespace ScorpCamp
 
         public void resetPlayers()
         {
-            while (!presets[players[0]].playable)
+            while (!Combatant.presets[players[0]].playable)
             {
                 players[0] += 1;
-                if (players[0] >= presets.Length)
+                if (players[0] >= Combatant.presets.Length)
                 {
                     players[0] = 0;
                 }
             } 
-            while (!presets[players[1]].fightable)
+            while (!Combatant.presets[players[1]].fightable)
             {
                 players[1] += 1;
-                if (players[1] >= presets.Length)
+                if (players[1] >= Combatant.presets.Length)
                 {
                     players[1] = 0;
                 }
             }
 
-            Preset p1 = presets[players[0]];
-            Preset p2 = presets[players[1]];
+            Combatant.Preset p1 = Combatant.presets[players[0]];
+            Combatant.Preset p2 = Combatant.presets[players[1]];
             player = newCombatant(p1, HorizontalAlignment.Left);
             player.pic = flipImage(player.pic);
             enemy = newCombatant(p2, HorizontalAlignment.Right);
@@ -316,11 +304,11 @@ namespace ScorpCamp
 
         public void unlock()
         {
-            switch (presets[players[1]].character)
+            switch (Combatant.presets[players[1]].character)
             {
                 case characters.TheRatMaster:
                     unlockPlayable(characters.TheRatMaster);
-                    if (presets[players[0]].character == characters.TheRatMaster)
+                    if (Combatant.presets[players[0]].character == characters.TheRatMaster)
                     {
                         unlockPlayable(characters.CrissWithAGun);
                     }
@@ -336,7 +324,7 @@ namespace ScorpCamp
 
         public void unlockPlayable(characters arg)
         {
-            foreach(Preset p in presets)
+            foreach(Combatant.Preset p in Combatant.presets)
             {
                 if (p.character == arg)
                 {
@@ -347,7 +335,7 @@ namespace ScorpCamp
 
         public void unlockFightable(characters arg)
         {
-            foreach (Preset p in presets)
+            foreach (Combatant.Preset p in Combatant.presets)
             {
                 if (p.character == arg)
                 {
@@ -386,11 +374,11 @@ namespace ScorpCamp
             GameArea.Children.Add(lbl);
         }
 
-        public Preset presetById(characters arg)
+        public Combatant.Preset presetById(characters arg)
         {
-            Preset rtrn = new Preset();
+            Combatant.Preset rtrn = new Combatant.Preset();
 
-            foreach (Preset p in presets)
+            foreach (Combatant.Preset p in Combatant.presets)
             {
                 if (p.character == arg)
                 {
@@ -408,14 +396,14 @@ namespace ScorpCamp
             player.hand = new Card[3];
             for (int i = 0; i < 3; i++)
             {
-                Preset p = presetById(player.character);
+                Combatant.Preset p = presetById(player.character);
                 player.hand[i] = p.deck[rnd.Next(p.deck.Length)];
             }
 
             enemy.hand = new Card[3];
             for (int i = 0; i < 3; i++)
             {
-                Preset p = presetById(enemy.character);
+                Combatant.Preset p = presetById(enemy.character);
                 enemy.hand[i] = p.deck[rnd.Next(p.deck.Length)];
             }
         }
@@ -518,22 +506,22 @@ namespace ScorpCamp
                         do
                         {
                             players[currentSelector] += 1;
-                            if (players[currentSelector] == presets.Length)
+                            if (players[currentSelector] == Combatant.presets.Length)
                             {
                                 players[currentSelector] = 0;
                             }
-                        } while (presets[players[currentSelector]].playable != true);
+                        } while (Combatant.presets[players[currentSelector]].playable != true);
                     }
                     else
                     {
                         do
                         {
                             players[currentSelector] += 1;
-                            if (players[currentSelector] == presets.Length)
+                            if (players[currentSelector] == Combatant.presets.Length)
                             {
                                 players[currentSelector] = 0;
                             }
-                        } while (presets[players[currentSelector]].fightable != true);
+                        } while (Combatant.presets[players[currentSelector]].fightable != true);
                     }
 
 
