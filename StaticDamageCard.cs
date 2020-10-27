@@ -11,10 +11,10 @@ namespace ScorpCamp
         private int damage;
 
         public StaticDamageCard(
-            CardType cardType,
             string name,
             string source,
-            int damage) : base(cardType, name, source)
+            int damage
+        ) : base(name, source)
         {
             this.damage = damage;
         }

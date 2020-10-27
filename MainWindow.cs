@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -11,6 +12,14 @@ namespace ScorpCamp
 {
     public partial class MainWindow : Window
     {
+
+        private List<Character> playerCharas;
+        private List<Character> enemyCharas;
+        private int playerIndex = 0;
+        private int enemyIndex = 1;
+
+        private Boolean isEnemy = false;
+
         public MainWindow()
         {
             rnd = new Random();
@@ -18,6 +27,9 @@ namespace ScorpCamp
             currentSelector = 0;
 
             InitializeComponent();
+
+            this.playerCharas = GetCharacters();
+            this.enemyCharas = GetCharacters();
 
             giveCards();
             CombatantSelectionStage();
@@ -32,19 +44,19 @@ namespace ScorpCamp
             imbrsh.ImageSource = sourceThis("Sentry.jpg");
             GameArea.Background = imbrsh;
 
-            Button next = new Button
+            Button select = new Button
             {
-                Content = "Next",
-                FontSize = 50,
+                Content = "Next Character",
+                FontSize = 30,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
             };
-            next.Click += buttonClick;
-            GameArea.Children.Add(next);
+            select.Click += SelectCharacter;
+            GameArea.Children.Add(select);
 
             Label name = new Label
             {
-                Content = Combatant.presets[players[currentSelector]].name,
+                Content = this.playerCharas[this.playerIndex].Name,
                 Background = Brushes.Gray,
                 BorderBrush = Brushes.Blue,
                 BorderThickness = new Thickness(5),
@@ -53,33 +65,30 @@ namespace ScorpCamp
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
             };
-            name.MouseDoubleClick += unlockAll;
             GameArea.Children.Add(name);
 
             Button thisOne = new Button
             {
-                Content = "This One",
+                Content = "Toggle b/w player and enemy",
                 FontSize = 30,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
                 Margin = new Thickness(0, 500, 0, 0),
             };
-            thisOne.Click += buttonClick;
+            thisOne.Click += ToggleCharacterSelect;
             GameArea.Children.Add(thisOne);
 
-            Button back = new Button
+            Button playButton = new Button
             {
-                Content = "Back",
+                Content = "Play",
                 FontSize = 30,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
                 Margin = new Thickness(0, 550, 0, 0),
             };
-            back.Click += buttonClick;
-            if (currentSelector == 1)
-            {
-                GameArea.Children.Add(back);
-            }
+            playButton.Click += PlayGame;
+            GameArea.Children.Add(playButton);
+            
 
             Label lblIndicator = new Label
             {
@@ -89,35 +98,47 @@ namespace ScorpCamp
                 VerticalAlignment = VerticalAlignment.Bottom,
                 Foreground = Brushes.Red,
             };
-            if (currentSelector == 0)
+            if (isEnemy)
             {
-                lblIndicator.HorizontalAlignment = HorizontalAlignment.Left;
+                lblIndicator.HorizontalAlignment = HorizontalAlignment.Right;
             }
             else
             {
-                lblIndicator.HorizontalAlignment = HorizontalAlignment.Right;
+                lblIndicator.HorizontalAlignment = HorizontalAlignment.Left;
             }
             GameArea.Children.Add(lblIndicator);
 
             resetPlayers();
 
-            Combatant cmb1 = player;
-            cmb1.pic = flipImage(cmb1.pic);
-            if (currentSelector == 0)
+            Character combantant1 = this.playerCharas[this.playerIndex];
+            Image playerImage = combantant1.GetImage;
+            playerImage.FlowDirection = FlowDirection.RightToLeft;
+            playerImage.HorizontalAlignment = HorizontalAlignment.Left;
+            if (this.isEnemy)
             {
-                cmb1.pic.Opacity = .7;
+                playerImage.Opacity = 0.7;
+            }
+            else
+            {
+                playerImage.Opacity = 1.0;
             }
 
-            var img = cmb1.pic;
-            GameArea.Children.Add(img);
+            GameArea.Children.Add(playerImage);
 
-            Combatant cmb2 = enemy;
-            cmb2.pic.Opacity = .7;
 
-            img = cmb2.pic;
-            GameArea.Children.Add(img);
-            //resetPlayers();
-            //showCombatants();
+            Character enemyChara = this.enemyCharas[this.enemyIndex];
+            Image enemyImage = enemyChara.GetImage;
+            enemyImage.HorizontalAlignment = HorizontalAlignment.Right;
+            if (this.isEnemy)
+            {
+                enemyImage.Opacity = 1.0;
+            }
+            else
+            {
+                enemyImage.Opacity = 0.7;
+            }
+
+            GameArea.Children.Add(enemyImage);
 
             newHand();
         }

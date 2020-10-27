@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -22,16 +23,6 @@ namespace ScorpCamp
 
         Combatant player = new Combatant();
         Combatant enemy = new Combatant();
-
-        Card[] cards = new Card[]
-        {
-            new StaticDamageCard(CardType.Gun, "Gun", "gun_card.png", -99),
-            new StaticDamageCard(CardType.Heal, "Heal", "heal_card_final.png", 7),
-            new RandomDamageCard(CardType.Sword, "Sword", "SWORD_final.png", -8, -3),
-            new RandomDamageCard(CardType.Bow, "Bow", "Bow.png", -8, -2),
-            new RandomDamageCard(CardType.MilkAtk, "Milk Attack", "milk_atk.png", -11, -5),
-            new RandomDamageCard(CardType.MilkHeal, "Milk Heal", "milk_heal.png", 5, 11)
-        };
 
         //<Image x:Name="goni" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="228" Source="standard.png" Margin="991,85,0,0" RenderTransformOrigin="3.292,0.792" Grid.Column="1"/>
 
@@ -66,6 +57,70 @@ namespace ScorpCamp
             return rtrn;
         }
 
+        public List<Character> GetCharacters()
+        {
+            List<Character> characters = new List<Character>();
+
+            characters.Add(new Character(
+                "Dr. Milk",
+                "DrMilk.png",
+                50,
+                499,
+                new List<Card>{
+                    new RandomDamageCard("Milk Attack", "milk_atk.png", -11, -5),
+                    new RandomDamageCard("Milk Heal", "milk_heal.png", 5, 11)
+                }
+            ));
+            characters.Add(new Character(
+                "The Rat Master",
+                "standard.png",
+                55,
+                500,
+                new List<Card> {
+                    new StaticDamageCard("Heal", "heal_card_final.png", 7),
+                    new RandomDamageCard("Sword", "SWORD_final.png", -8, -3),
+                    new RandomDamageCard("Bow", "Bow.png", -8, -2)
+                }
+            ));
+            characters.Add(new Character(
+                "Criss With a Gun",
+                "crisswithagun.png",
+                1000,
+                500,
+                new List<Card>
+                {
+                    new StaticDamageCard("Gun", "gun_card.png", -99)
+                }
+            ));
+            characters.Add(new Character(
+                "Rat Wizard",
+                "rat_wiz.png",
+                40,
+                250,
+                new List<Card>
+                {
+                    new StaticDamageCard("Heal", "heal_card_final.png", 7),
+                    new RandomDamageCard("Sword", "SWORD_final.png", -8, -3),
+                    new RandomDamageCard("Bow", "Bow.png", -8, -2)
+                }
+            ));
+
+            characters.Add(new Character(
+                "Rat Gamer",
+                "Rat_Gamer.png",
+                35,
+                300,
+                new List<Card>
+                {
+                    new StaticDamageCard("Heal", "heal_card_final.png", 7),
+                    new RandomDamageCard("Sword", "SWORD_final.png", -8, -3),
+                    new RandomDamageCard("Bow", "Bow.png", -8, -2)
+                }
+            ));
+
+            return characters;
+        }
+
         public void giveCards()
         {
             foreach(Combatant.Preset p in Combatant.presets)
@@ -75,38 +130,38 @@ namespace ScorpCamp
                     case characters.DrMilk:
                         p.deck = new Card[]
                         {
-                            new RandomDamageCard(CardType.MilkAtk, "Milk Attack", "milk_atk.png", -11, -5),
-                            new RandomDamageCard(CardType.MilkHeal, "Milk Heal", "milk_heal.png", 5, 11)
+                            new RandomDamageCard("Milk Attack", "milk_atk.png", -11, -5),
+                            new RandomDamageCard("Milk Heal", "milk_heal.png", 5, 11)
                         };
                         break;
                     case characters.RatWizard:
                         p.deck = new Card[]
                         {
-                            new StaticDamageCard(CardType.Heal, "Heal", "heal_card_final.png", 7),
-                            new RandomDamageCard(CardType.Sword, "Sword", "SWORD_final.png", -8, -3),
-                            new RandomDamageCard(CardType.Bow, "Bow", "Bow.png", -8, -2)
+                            new StaticDamageCard("Heal", "heal_card_final.png", 7),
+                            new RandomDamageCard("Sword", "SWORD_final.png", -8, -3),
+                            new RandomDamageCard("Bow", "Bow.png", -8, -2)
                         };
                         break;
                     case characters.CrissWithAGun:
                         p.deck = new Card[]
                         {
-                            new StaticDamageCard(CardType.Gun, "Gun", "gun_card.png", -99),
+                            new StaticDamageCard("Gun", "gun_card.png", -99),
                         };
                         break;
                     case characters.TheRatMaster:
                         p.deck = new Card[]
                         {
-                            new StaticDamageCard(CardType.Heal, "Heal", "heal_card_final.png", 7),
-                            new RandomDamageCard(CardType.Sword, "Sword", "SWORD_final.png", -8, -3),
-                            new RandomDamageCard(CardType.Bow, "Bow", "Bow.png", -8, -2)
+                            new StaticDamageCard("Heal", "heal_card_final.png", 7),
+                            new RandomDamageCard("Sword", "SWORD_final.png", -8, -3),
+                            new RandomDamageCard("Bow", "Bow.png", -8, -2)
                         };
                         break;
                     case characters.RatGamer:
                         p.deck = new Card[]
                         {
-                            new StaticDamageCard(CardType.Heal, "Heal", "heal_card_final.png", 7),
-                            new RandomDamageCard(CardType.Sword, "Sword", "SWORD_final.png", -8, -3),
-                            new RandomDamageCard(CardType.Bow, "Bow", "Bow.png", -8, -2)
+                            new StaticDamageCard("Heal", "heal_card_final.png", 7),
+                            new RandomDamageCard("Sword", "SWORD_final.png", -8, -3),
+                            new RandomDamageCard("Bow", "Bow.png", -8, -2)
                         };
                         break;
                 }
@@ -150,17 +205,6 @@ namespace ScorpCamp
             else
             {
                 endStage(Convert.ToInt32(turn) + 1);
-            }
-        }
-
-        
-
-        public void unlockAll(object sender, EventArgs e)
-        {
-            foreach (Combatant.Preset p in Combatant.presets)
-            {
-                unlockPlayable(p.character);
-                unlockFightable(p.character);
             }
         }
 
@@ -329,7 +373,7 @@ namespace ScorpCamp
                 Content = "Next Card",
                 FontSize = 30,
             };
-            nextCard.Click += buttonClick;
+            nextCard.Click += NextCardButton;
             GameArea.Children.Add(nextCard);
 
             Button play = new Button
@@ -340,7 +384,7 @@ namespace ScorpCamp
                 Content = "Play",
                 FontSize = 40,
             };
-            play.Click += buttonClick;
+            play.Click += PlayCard;
             GameArea.Children.Add(play);
         }
 
@@ -355,76 +399,78 @@ namespace ScorpCamp
             showCards();
         }
 
+        public void SelectCharacter(
+            object sender,
+            EventArgs e)
+        {
+            if (!this.isEnemy)
+            {
+                this.playerIndex += 1;
+
+                if (this.playerIndex == this.playerCharas.Count)
+                {
+                    this.playerIndex = 0;
+                }
+            }
+            else
+            {
+                this.enemyIndex += 1;
+                if (this.enemyIndex == this.playerCharas.Count)
+                {
+                    this.enemyIndex = 0;
+                }
+            }
+
+            CombatantSelectionStage();
+        }
+
+        void ToggleCharacterSelect(
+            object sender,
+            EventArgs e
+        ) {
+            this.isEnemy = !this.isEnemy;
+            CombatantSelectionStage();
+        }
+
+        void PlayGame(
+            object sender,
+            EventArgs e
+        ) {
+            handex = 0;
+            newHand();
+            battleStage();
+        }
+
+        void PlayCard(
+            object sender,
+            EventArgs e
+        ) {
+            playCard(player.hand[handex]);
+            playCard(enemy.hand[0]);
+
+            battleStage();
+        }
+
+        void NextCardButton(
+            object sender,
+            EventArgs e
+        ) {
+            handex += 1;
+            if (handex == 3)
+            {
+                handex = 0;
+            }
+            battleStage();
+        }
+
         void buttonClick(object sender, RoutedEventArgs e)
         {
             Button s = (Button)sender;
             switch (s.Content)
             {
-                case "Back":
-                    currentSelector = 0;
-                    CombatantSelectionStage();
-                    break;
-                case "Play":
-                    if (!playCard(player.hand[handex]))
-                    {
-                        if (!playCard(enemy.hand[0]))
-                        {
-                            handex = 0;
-                            newHand();
-                            battleStage();
-                        }   
-                    }
-                    
-                    break;
-                case "Next Card":
-                    handex += 1;
-                    if (handex == 3)
-                    {
-                        handex = 0;
-                    }
-                    battleStage();
-                    break;
                 case "Reset":
                     currentSelector = 0;
                     CombatantSelectionStage();
-                    break;
-                case "Next":
-                    if (currentSelector == 0)
-                    {
-                        do
-                        {
-                            players[currentSelector] += 1;
-                            if (players[currentSelector] == Combatant.presets.Length)
-                            {
-                                players[currentSelector] = 0;
-                            }
-                        } while (Combatant.presets[players[currentSelector]].playable != true);
-                    }
-                    else
-                    {
-                        do
-                        {
-                            players[currentSelector] += 1;
-                            if (players[currentSelector] == Combatant.presets.Length)
-                            {
-                                players[currentSelector] = 0;
-                            }
-                        } while (Combatant.presets[players[currentSelector]].fightable != true);
-                    }
-
-
-                    CombatantSelectionStage();
-                    break;
-                case "This One":
-                    currentSelector += 1;
-                    if (currentSelector == 1)
-                    {
-                        CombatantSelectionStage();
-                    }
-                    else
-                    {
-                        ResetCombat();
-                    }
                     break;
             }
         }

@@ -1,7 +1,6 @@
 C:\Users\benmi\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.exe.config
 C:\Users\benmi\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.exe
 C:\Users\benmi\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.pdb
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
 C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\MainWindow.g.cs
 C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\App.g.cs
 C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.cache
@@ -13,3 +12,4 @@ C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateReso
 C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
 C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.exe
 C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.pdb
+C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache

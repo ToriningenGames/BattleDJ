@@ -13,11 +13,11 @@ namespace ScorpCamp
         private int maxDamage;
 
         public RandomDamageCard(
-            CardType cardType,
             string name,
             string source,
             int minDamage,
-            int maxDamage) : base(cardType, name, source)
+            int maxDamage
+        ) : base(name, source)
         {
             this.minDamage = minDamage;
             this.maxDamage = maxDamage;

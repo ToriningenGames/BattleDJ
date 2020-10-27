@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Character.cs" />
     <Compile Include="RandomDamageCard.cs" />
     <Compile Include="StaticDamageCard.cs" />
     <Page Include="MainWindow.xaml">
