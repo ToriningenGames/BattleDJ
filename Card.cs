@@ -34,6 +34,11 @@
             this.name = name;
             this.source = source;
         }
+
+        public virtual int GetDamage()
+        {
+            return 0;
+        }
     }
 
 }

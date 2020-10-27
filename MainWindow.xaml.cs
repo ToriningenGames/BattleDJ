@@ -25,12 +25,12 @@ namespace ScorpCamp
 
         Card[] cards = new Card[]
         {
-            new Card(CardType.Gun, "Gun", "gun_card.png"),
-            new Card(CardType.Heal, "Heal", "heal_card_final.png"),
-            new Card(CardType.Sword, "Sword", "SWORD_final.png"),
-            new Card(CardType.Bow, "Bow", "Bow.png"),
-            new Card(CardType.MilkAtk, "Milk Attack", "milk_atk.png"),
-            new Card(CardType.MilkHeal, "Milk Heal", "milk_heal.png")
+            new StaticDamageCard(CardType.Gun, "Gun", "gun_card.png", -99),
+            new StaticDamageCard(CardType.Heal, "Heal", "heal_card_final.png", 7),
+            new RandomDamageCard(CardType.Sword, "Sword", "SWORD_final.png", -8, -3),
+            new RandomDamageCard(CardType.Bow, "Bow", "Bow.png", -8, -2),
+            new RandomDamageCard(CardType.MilkAtk, "Milk Attack", "milk_atk.png", -11, -5),
+            new RandomDamageCard(CardType.MilkHeal, "Milk Heal", "milk_heal.png", 5, 11)
         };
 
         //<Image x:Name="goni" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="228" Source="standard.png" Margin="991,85,0,0" RenderTransformOrigin="3.292,0.792" Grid.Column="1"/>
@@ -44,79 +44,11 @@ namespace ScorpCamp
 
         public bool playCard(Card c)
         {
-            int h;
-            switch (c.CardType)
-            {
-                case CardType.Gun:
-                    h = 0;
-                    if (!turn)
-                    {
-                        enemy.health[0] = h;
-                    }
-                    else
-                    {
-                        player.health[0] = h;
-                    }
-                    break;
-                case CardType.Heal:
-                    h = 7;
-                    if (!turn)
-                    {
-                        player.health[0] += h;
-                    }
-                    else
-                    {
-                        enemy.health[0] += h;
-                    }
-                    break;
-                case CardType.Sword:
-                    h = 0 - rnd.Next(3, 8);
-                    if (turn)
-                    {
-                        player.health[0] += h;
-                    }
-                    else
-                    {
-                        enemy.health[0] += h;
-                    }
-                    break;
-                case CardType.Bow:
-                    for (int i = 0; i < 2; i += 1)
-                    {
-                        h = 0 - rnd.Next(2, 4);
-                        if (turn)
-                        {
-                            player.health[0] += h;
-                        }
-                        else
-                        {
-                            enemy.health[0] += h;
-                        }
-                    }
-                    break;
-                case CardType.MilkHeal:
-                    h = rnd.Next(5, 11);
-                    if (!turn)
-                    {
-                        player.health[0] += h;
-                    }
-                    else
-                    {
-                        enemy.health[0] += h;
-                    }
-                    break;
-                case CardType.MilkAtk:
-                    h = 0 - rnd.Next(5, 11);
-                    if (turn)
-                    {
-                        player.health[0] += h;
-                    }
-                    else
-                    {
-                        enemy.health[0] += h;
-                    }
-                    break;
-            }
+           
+            if (!turn)
+                enemy.health[0] += c.GetDamage();
+            else
+                player.health[0] += c.GetDamage();
 
             var rtrn = false;
 
@@ -134,22 +66,6 @@ namespace ScorpCamp
             return rtrn;
         }
 
-        public Card cardById(CardType arg)
-        {
-            //Card rtrn = new Card();
-            Card rtrn = null;
-
-            foreach (Card c in cards)
-            {
-                if (c.CardType == arg)
-                {
-                    rtrn = c;
-                }
-            }
-
-            return rtrn;
-        }
-
         public void giveCards()
         {
             foreach(Combatant.Preset p in Combatant.presets)
@@ -159,38 +75,38 @@ namespace ScorpCamp
                     case characters.DrMilk:
                         p.deck = new Card[]
                         {
-                            cardById(CardType.MilkAtk),
-                            cardById(CardType.MilkHeal)
+                            new RandomDamageCard(CardType.MilkAtk, "Milk Attack", "milk_atk.png", -11, -5),
+                            new RandomDamageCard(CardType.MilkHeal, "Milk Heal", "milk_heal.png", 5, 11)
                         };
                         break;
                     case characters.RatWizard:
                         p.deck = new Card[]
                         {
-                            cardById(CardType.Heal),
-                            cardById(CardType.Sword),
-                            cardById(CardType.Bow)
+                            new StaticDamageCard(CardType.Heal, "Heal", "heal_card_final.png", 7),
+                            new RandomDamageCard(CardType.Sword, "Sword", "SWORD_final.png", -8, -3),
+                            new RandomDamageCard(CardType.Bow, "Bow", "Bow.png", -8, -2)
                         };
                         break;
                     case characters.CrissWithAGun:
                         p.deck = new Card[]
                         {
-                            cardById(CardType.Gun),
+                            new StaticDamageCard(CardType.Gun, "Gun", "gun_card.png", -99),
                         };
                         break;
                     case characters.TheRatMaster:
                         p.deck = new Card[]
                         {
-                            cardById(CardType.Heal),
-                            cardById(CardType.Bow),
-                            cardById(CardType.Sword),
+                            new StaticDamageCard(CardType.Heal, "Heal", "heal_card_final.png", 7),
+                            new RandomDamageCard(CardType.Sword, "Sword", "SWORD_final.png", -8, -3),
+                            new RandomDamageCard(CardType.Bow, "Bow", "Bow.png", -8, -2)
                         };
                         break;
                     case characters.RatGamer:
                         p.deck = new Card[]
                         {
-                            cardById(CardType.Heal),
-                            cardById(CardType.Sword),
-                            cardById(CardType.Bow),
+                            new StaticDamageCard(CardType.Heal, "Heal", "heal_card_final.png", 7),
+                            new RandomDamageCard(CardType.Sword, "Sword", "SWORD_final.png", -8, -3),
+                            new RandomDamageCard(CardType.Bow, "Bow", "Bow.png", -8, -2)
                         };
                         break;
                 }
@@ -449,9 +365,9 @@ namespace ScorpCamp
                     CombatantSelectionStage();
                     break;
                 case "Play":
-                    if (!playCard(cardById(player.hand[handex].CardType)))
+                    if (!playCard(player.hand[handex]))
                     {
-                        if (!playCard(cardById(enemy.hand[0].CardType)))
+                        if (!playCard(enemy.hand[0]))
                         {
                             handex = 0;
                             newHand();
