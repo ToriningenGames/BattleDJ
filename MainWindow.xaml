@@ -1,0 +1,47 @@
+﻿<Window x:Class="ScorpCamp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScorpCamp"
+        mc:Ignorable="d"
+        Title="Master's Mischief" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="Sentry.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320*"/>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="320*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="PlayerNameLabel" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.555,2.166" Margin="0,70,0,0" Height="26" Width="309" HorizontalContentAlignment="Center"/>
+        <Label x:Name="EnemyNameLabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="0,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.336,-0.387" Height="26" Width="310" HorizontalContentAlignment="Center"/>
+        <Image x:Name="PlayerImage" Margin="209.5,119,9.5,201" RenderTransformOrigin="-0.16,0.016">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-2" ScaleY="2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="EnemyImage" Grid.Column="2" Margin="109.5,169,109.5,151" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="PlayerSelectBack" Content="&lt;&lt;&lt;" HorizontalAlignment="Left" Margin="72.5,350,0,0" VerticalAlignment="Top" Width="75" Height="19" Click="PlayerSelectBack_Click" ToolTip="Previous Player"/>
+        <Button x:Name="PlayerSelectForward" Content="&gt;&gt;&gt;" HorizontalAlignment="Right" Margin="0,350,72.5,0" VerticalAlignment="Top" Width="75" Height="19" Click="PlayerSelectForward_Click" ToolTip="Next Player"/>
+        <Button x:Name="EnemySelectBack" Content="&lt;&lt;&lt;" HorizontalAlignment="Left" Margin="72.5,350,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Height="19" Click="EnemySelectBack_Click" ToolTip="Previous Enemy"/>
+        <Button x:Name="EnemySelectForward" Content="&gt;&gt;&gt;" HorizontalAlignment="Right" Margin="0,350,72.5,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Height="19" Click="EnemySelectForward_Click" ToolTip="Next Enemy"/>
+        <Button x:Name="PlayGameButton" Content="Play!" Grid.Column="1" HorizontalAlignment="Left" Margin="36.8,255,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
