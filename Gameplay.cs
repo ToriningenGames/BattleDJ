@@ -28,6 +28,16 @@ namespace ScorpCamp
 
         }
 
+        public string GetPlayerStatus()
+        {
+            return this.player.Health + "/" + this.player.MaxHealth;
+        }
+
+        public string GetEnemyStatus()
+        {
+            return this.enemy.Health + "/" + this.enemy.MaxHealth;
+        }
+
         private bool IsWinner(int health)
         {
             return true;

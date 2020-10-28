@@ -58,6 +58,9 @@
     <Compile Include="Character.cs" />
     <Compile Include="CharacterSelect.cs" />
     <Compile Include="Gameplay.cs" />
+    <Compile Include="GameplayWindow.xaml.cs">
+      <DependentUpon>GameplayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RandomDamageCard.cs" />
     <Compile Include="StaticDamageCard.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -69,6 +72,10 @@
     </Compile>
     <Compile Include="Card.cs" />
     <Compile Include="Combatant.cs" />
+    <Page Include="GameplayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

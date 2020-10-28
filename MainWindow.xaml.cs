@@ -69,6 +69,13 @@ namespace ScorpCamp
             DrawCharacters();
         }
 
-        
+        private void PlayGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            GameplayWindow gameplayWindow =
+                new GameplayWindow(characterSelection.Player, characterSelection.Enemy);
+            gameplayWindow.Owner = this;
+            
+            gameplayWindow.Show();
+        }
     }
 }

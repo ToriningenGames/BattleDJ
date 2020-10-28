@@ -22,12 +22,16 @@ namespace ScorpCamp
         public int HandSize 
         { get; set; }
         
+        public int Health 
+        { get => this.health; }
 
         public Image GetImage
         { get; }
 
         public string Name
         { get => this.name; }
+
+        public int MaxHealth { get; }
 
         public Character(
             string name,
@@ -41,6 +45,7 @@ namespace ScorpCamp
             this.source = source;
             this.health = health;
             this.deck = deck;
+            this.MaxHealth = health;
             this.GetImage = new Image
             {
                 Source = new BitmapImage(new Uri(this.source, UriKind.Relative))

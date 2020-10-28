@@ -58,3 +58,5 @@ C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateReso
 C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
 C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.exe
 C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.pdb
+C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\GameplayWindow.g.cs
+C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\GameplayWindow.baml
