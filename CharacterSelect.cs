@@ -30,7 +30,6 @@ namespace ScorpCamp
                 "Dr. Milk",
                 "DrMilk.png",
                 50,
-                499,
                 new List<Card>{
                     new RandomDamageCard("Milk Attack", "milk_atk.png", -11, -5),
                     new RandomDamageCard("Milk Heal", "milk_heal.png", 5, 11)
@@ -40,7 +39,6 @@ namespace ScorpCamp
                 "The Rat Master",
                 "standard.png",
                 55,
-                500,
                 new List<Card> {
                     new StaticDamageCard("Heal", "heal_card_final.png", 7),
                     new RandomDamageCard("Sword", "SWORD_final.png", -8, -3),
@@ -51,7 +49,6 @@ namespace ScorpCamp
                 "Criss With a Gun",
                 "crisswithagun.png",
                 1000,
-                500,
                 new List<Card>
                 {
                     new StaticDamageCard("Gun", "gun_card.png", -99)
@@ -61,7 +58,6 @@ namespace ScorpCamp
                 "Rat Wizard",
                 "rat_wiz.png",
                 40,
-                250,
                 new List<Card>
                 {
                     new StaticDamageCard("Heal", "heal_card_final.png", 7),
@@ -74,7 +70,6 @@ namespace ScorpCamp
                 "Rat Gamer",
                 "Rat_Gamer.png",
                 35,
-                300,
                 new List<Card>
                 {
                     new StaticDamageCard("Heal", "heal_card_final.png", 7),

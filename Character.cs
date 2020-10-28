@@ -11,14 +11,17 @@ namespace ScorpCamp
 {
     public class Character
     {
+        private Random random;
         private string name;
         private string source;
         private int health;
-        private int height;
-        private List<Card> defaultCards;
+        
+        private List<Card> deck;
 
-        public Label GetLabel
-        { get;  }
+        private List<Card> hand;
+        public int HandSize 
+        { get; set; }
+        
 
         public Image GetImage
         { get; }
@@ -30,28 +33,35 @@ namespace ScorpCamp
             string name,
             string source,
             int health,
-            int height,
-            List<Card> defaultCards)
+            List<Card> deck
+            )
         {
+            this.random = new Random();
             this.name = name;
             this.source = source;
             this.health = health;
-            this.height = height;
-            this.defaultCards = defaultCards;
-
+            this.deck = deck;
             this.GetImage = new Image
             {
-                VerticalAlignment = VerticalAlignment.Center,
-                Height = this.height,
-                Source = new BitmapImage(new Uri(this.source, UriKind.Relative)),
-                Margin = new Thickness(50, 0, 50, 0)
+                Source = new BitmapImage(new Uri(this.source, UriKind.Relative))
             };
+        }
 
-            this.GetLabel = new Label();
-            this.GetLabel.FontSize = 20;
-            this.GetLabel.Margin = new Thickness(20, 10, 20, 10);
-            this.GetLabel.VerticalAlignment = VerticalAlignment.Top;
+        public void DealHand()
+        {
+            for (int i = 0; i < this.HandSize; i++)
+            {
+                this.hand.Add(this.deck[this.random.Next(0, this.deck.Count)]);
+            }
+        }
 
+        public void PlayCard(int cardIndex)
+        {
+            this.hand.RemoveAt(cardIndex);
+            if (this.hand.Count == 0)
+            {
+                DealHand();
+            }
         }
     }
 }

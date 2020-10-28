@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Character.cs" />
     <Compile Include="CharacterSelect.cs" />
+    <Compile Include="Gameplay.cs" />
     <Compile Include="RandomDamageCard.cs" />
     <Compile Include="StaticDamageCard.cs" />
     <Compile Include="MainWindow.xaml.cs">

@@ -43,3 +43,18 @@ C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.Properties.R
 C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
 C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
 C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
+C:\Users\alexa\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.exe.config
+C:\Users\alexa\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.exe
+C:\Users\alexa\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.pdb
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\MainWindow.g.cs
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\App.g.cs
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.cache
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.lref
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\MainWindow.baml
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.g.resources
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.Properties.Resources.resources
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.exe
+C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.pdb
