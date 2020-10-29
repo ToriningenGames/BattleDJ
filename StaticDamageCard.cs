@@ -8,6 +8,7 @@ namespace ScorpCamp
 {
     class StaticDamageCard : Card
     {
+
         private int damage;
 
         public StaticDamageCard(

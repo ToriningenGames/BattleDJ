@@ -5,7 +5,6 @@
         private string name;
         private string source;
 
-        protected int damage;
 
         public string Source
         { get => this.source; }

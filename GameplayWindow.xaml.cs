@@ -42,6 +42,9 @@ namespace ScorpCamp
             this.AddPlayerCards();
             this.AddPlayerCards();
             this.AddPlayerCards();
+            this.AddEnemyCards();
+            this.AddEnemyCards();
+            this.AddEnemyCards();
         }
 
         private void AddPlayerCards()
@@ -55,7 +58,19 @@ namespace ScorpCamp
             card1.Height = 4 * 60;
             card1.MouseEnter += OnMouseOver;
             PlayerCardsStackPanel.Children.Add(card1);
-            
+        }
+
+        private void AddEnemyCards()
+        {
+            Button card1 = new Button();
+            Image cardImage = new Image();
+            cardImage.Source = new BitmapImage(new Uri(@"C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\gun_card.png"));
+            card1.Content = cardImage;
+            //card1.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\gun_card.png")));
+            card1.Width = 3 * 60;
+            card1.Height = 4 * 60;
+            card1.MouseEnter += OnMouseOver;
+            EnemyCardsStackPanel.Children.Add(card1);
         }
 
         private void OnMouseOver(Object sender, EventArgs e)
