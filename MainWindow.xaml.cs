@@ -76,7 +76,7 @@ namespace ScorpCamp
                 new GameplayWindow(characterSelection.Player, characterSelection.Enemy);
             
             gameplayWindow.Owner = this;
-            gameplayWindow.Show();
+            gameplayWindow.ShowDialog();
             this.characterSelection = new CharacterSelect();
             DrawCharacters();
         }
