@@ -101,15 +101,17 @@ namespace ScorpCamp
         {
             Button cardButton = (Button)sender;
             int cardIndex = (int)cardButton.Tag;
-            Gameplay.WinState result = gameplay.PlayCard(cardIndex);
-            if (result != Gameplay.WinState.WinnerNone)
-            {
-                GameOver(result);
-            }
+            Gameplay.BattleReport result = gameplay.PlayCard(cardIndex);
             PlayerCardsStackPanel.Children.Remove(cardButton);
+            this.PlayerActionTextBlock.Text = result.playerAction;
+            this.EnemyActionTextBlock.Text = result.enemyAction;
             this.DisplayAllStatus();
             this.DrawPlayerCards();
             this.DrawEnemyCards();
+            if (result.currentResult != Gameplay.WinState.WinnerNone)
+            {
+                GameOver(result.currentResult);
+            }
         }
 
         private void GameOver(Gameplay.WinState winner)

@@ -32,6 +32,8 @@
         <Label x:Name="EnemyStatusLabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="244,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,-0.413" Height="26" Width="319" Background="#BF23F797" HorizontalContentAlignment="Center"/>
         <StackPanel x:Name="PlayerCardsStackPanel" Height="432" Margin="0,208,8,0" VerticalAlignment="Top" Orientation="Horizontal"/>
         <StackPanel x:Name="EnemyCardsStackPanel" Grid.Column="2" Height="432" Margin="5,208,5,0" VerticalAlignment="Top" Width="563" Orientation="Horizontal"/>
+        <TextBlock x:Name="PlayerActionTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="100" Background="#BF23F797" TextAlignment="Center"><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="EnemyActionTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="10,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="100" Background="#BF23F797" TextAlignment="Center"><Run/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>

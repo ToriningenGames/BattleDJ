@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("measureattack.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("title0.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("title1.png")]
 
 

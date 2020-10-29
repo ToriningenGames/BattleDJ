@@ -42,6 +42,8 @@
         <Button x:Name="EnemySelectBack" Content="&lt;&lt;&lt;" HorizontalAlignment="Left" Margin="72.5,350,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Height="19" Click="EnemySelectBack_Click" ToolTip="Previous Enemy"/>
         <Button x:Name="EnemySelectForward" Content="&gt;&gt;&gt;" HorizontalAlignment="Right" Margin="0,350,72.5,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Height="19" Click="EnemySelectForward_Click" ToolTip="Next Enemy"/>
         <Button x:Name="PlayGameButton" Content="Play!" Grid.Column="1" HorizontalAlignment="Left" Margin="36.8,255,0,0" VerticalAlignment="Top" Width="75" Click="PlayGameButton_Click"/>
+        <Image HorizontalAlignment="Left" Height="217" Margin="71,-5,0,0" VerticalAlignment="Top" Width="305" Source="Title0.png" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="106,-5,0,0" VerticalAlignment="Top" Width="283" Source="Title1.png" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

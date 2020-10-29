@@ -183,5 +183,9 @@
   <ItemGroup>
     <Resource Include="MeasureAttack.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Title0.png" />
+    <Resource Include="Title1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

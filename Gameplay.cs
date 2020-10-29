@@ -8,11 +8,24 @@ namespace ScorpCamp
 {
     public class Gameplay
     {
+        public struct BattleReport {
+            public WinState currentResult;
+            //public CharacterAction playerAction;
+            //public CharacterAction enemyAction;
+            public string playerAction;
+            public string enemyAction;
+        }
         public enum WinState
         {
             WinnerNone,
             WinnerPlayer,
             WinnerEnemy
+        }
+        public enum CharacterAction
+        {
+            Damage,
+            Heal,
+            Buff
         }
 
         private Character player;
@@ -27,50 +40,65 @@ namespace ScorpCamp
             this.enemy.HandSize = 1;
         }
 
-        public WinState PlayCard(int cardIndex)
+        public BattleReport PlayCard(int cardIndex)
         {
-            this.PlayerTurn(cardIndex);
+            BattleReport roundResult = new BattleReport();
+            roundResult.playerAction = this.PlayerTurn(cardIndex);
             if (IsWinner() != WinState.WinnerNone)
             {
-                return IsWinner();
+                roundResult.currentResult = IsWinner();
+                return roundResult;
             }
-            this.EnemyTurn(0);  //Only one card; always play the only card
-            return IsWinner();
+            roundResult.enemyAction = this.EnemyTurn(0);  //Only one card; always play the only card
+            roundResult.currentResult = IsWinner();
+            return roundResult;
         }
 
-        private void PlayerTurn(int cardIndex)
+        private string PlayerTurn(int cardIndex)
         {
+            //string playerAction = "{PlayerName} {action} for {number} points!";
+            string playerAction = player.Name + " ";
             Card actionCard = this.player.PlayCard(cardIndex);
+            int damage = actionCard.GetDamage();
             if (actionCard.GetType() == typeof(DamageBuffCard))
             {
-                player.damageBuff += actionCard.GetDamage();
+                player.damageBuff += damage;
+                playerAction += "buffs for " + -damage + " extra damage!";
+            }
+            else if (damage < 0)
+            {
+                this.enemy.Health += damage + player.damageBuff;
+                playerAction += "hits for " + -damage + " damage!";
             }
             else
             {
-                int damage = actionCard.GetDamage();
-                if (damage < 0)
-                {
-                    this.enemy.Health += damage + player.damageBuff;
-                }
-                else
-                {
-                    this.player.Health += damage;
-                }
+                this.player.Health += damage;
+                playerAction += "heals for " + damage + " hitpoints!";
             }
+            return playerAction;
         }
 
-        private void EnemyTurn(int cardIndex)
+        private string EnemyTurn(int cardIndex)
         {
+            string enemyAction = enemy.Name + " ";
             Card actionCard = this.enemy.PlayCard(cardIndex);
             int damage = actionCard.GetDamage();
-            if (damage < 0)
+            if (actionCard.GetType() == typeof(DamageBuffCard))
+            {
+                enemy.damageBuff += damage;
+                enemyAction += "buffs for " + -damage + " extra damage!";
+            }
+            else if (damage < 0)
             {
                 this.player.Health += damage;
+                enemyAction += "hits for " + -damage + " damage!";
             }
             else
             {
                 this.enemy.Health += damage;
+                enemyAction += "heals for " + damage + " hitpoints!";
             }
+            return enemyAction;
         }
 
         public List<Card> GetPlayerHand()
