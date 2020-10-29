@@ -15,23 +15,23 @@
             <ColumnDefinition Width="120*"/>
             <ColumnDefinition Width="573*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="PlayerNameLabel" Content="Label" VerticalAlignment="Top" Margin="176,10,175.2,0" HorizontalContentAlignment="Center" Height="26"/>
-        <Label x:Name="EnemyNameLabel" Content="Label" VerticalAlignment="Top" Margin="276.8,80,10,0" HorizontalContentAlignment="Center" Grid.Column="2" Height="26"/>
-        <Image x:Name="PlayerImage" HorizontalAlignment="Left" Height="100" Margin="187,49,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="PlayerNameLabel" Content="Label" VerticalAlignment="Top" Margin="205,10,0,0" HorizontalContentAlignment="Center" Height="26" Background="#BF23F797"/>
+        <Label x:Name="EnemyNameLabel" Content="Label" VerticalAlignment="Top" Margin="244,10,5,0" HorizontalContentAlignment="Center" Grid.Column="2" Height="26" Background="#BF23F797" RenderTransformOrigin="0.475,-2.276"/>
+        <Image x:Name="PlayerImage" HorizontalAlignment="Left" Height="220" Margin="9.8,10,0,0" VerticalAlignment="Top" Width="220" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
+                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="1.292"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="EnemyImage" Grid.Column="2" HorizontalAlignment="Left" Height="270" Margin="9.8,10,0,0" VerticalAlignment="Top" Width="229"/>
-        <Label x:Name="PlayerStatusLabel" Content="Label" Margin="10,193,5.2,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="26"/>
-        <Label x:Name="EnemyStatusLabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="459.8,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,-0.413" Height="26" Width="38"/>
-        <StackPanel x:Name="PlayerCardsStackPanel" Height="416" Margin="0,224,8.2,0" VerticalAlignment="Top" Orientation="Horizontal"/>
-        <StackPanel x:Name="EnemyCardsStackPanel" Grid.Column="2" Height="355" Margin="4.8,285,5,0" VerticalAlignment="Top" Width="563" Orientation="Horizontal"/>
+        <Image x:Name="EnemyImage" Grid.Column="2" HorizontalAlignment="Left" Height="220" Margin="9.8,10,0,0" VerticalAlignment="Top" Width="220"/>
+        <Label x:Name="PlayerStatusLabel" Content="Label" Margin="205,88,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="26" Background="#BF23F797"/>
+        <Label x:Name="EnemyStatusLabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="244,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,-0.413" Height="26" Width="319" Background="#BF23F797" HorizontalContentAlignment="Center"/>
+        <StackPanel x:Name="PlayerCardsStackPanel" Height="432" Margin="0,208,8,0" VerticalAlignment="Top" Orientation="Horizontal"/>
+        <StackPanel x:Name="EnemyCardsStackPanel" Grid.Column="2" Height="432" Margin="5,208,5,0" VerticalAlignment="Top" Width="563" Orientation="Horizontal"/>
 
     </Grid>
 </Window>

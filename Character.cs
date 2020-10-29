@@ -11,7 +11,6 @@ namespace ScorpCamp
 {
     public class Character
     {
-        private Random random;
         private string name;
         private string source;
         private int health;
@@ -19,11 +18,15 @@ namespace ScorpCamp
         private List<Card> deck;
 
         private List<Card> hand;
+
+        public List<Card> Hand
+        { get => this.hand; }
+
         public int HandSize 
         { get; set; }
         
         public int Health 
-        { get => this.health; }
+        { get => this.health; set => this.health = value;  }
 
         public Image GetImage
         { get; }
@@ -40,33 +43,36 @@ namespace ScorpCamp
             List<Card> deck
             )
         {
-            this.random = new Random();
             this.name = name;
             this.source = source;
             this.health = health;
             this.deck = deck;
             this.MaxHealth = health;
+            this.hand = new List<Card>();
             this.GetImage = new Image
             {
                 Source = new BitmapImage(new Uri(this.source, UriKind.Relative))
             };
+            DealHand();
         }
 
         public void DealHand()
         {
             for (int i = 0; i < this.HandSize; i++)
             {
-                this.hand.Add(this.deck[this.random.Next(0, this.deck.Count)]);
+                this.hand.Add(this.deck[RNG.random.Next(0, this.deck.Count)]);
             }
         }
 
-        public void PlayCard(int cardIndex)
+        public Card PlayCard(int cardIndex)
         {
+            Card playedCard = this.hand[cardIndex];
             this.hand.RemoveAt(cardIndex);
             if (this.hand.Count == 0)
             {
                 DealHand();
             }
+            return playedCard;
         }
     }
 }

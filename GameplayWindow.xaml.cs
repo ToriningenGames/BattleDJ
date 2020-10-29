@@ -37,46 +37,91 @@ namespace ScorpCamp
             this.EnemyNameLabel.Content = enemy.Name;
             this.PlayerImage.Source = player.GetImage.Source;
             this.EnemyImage.Source = enemy.GetImage.Source;
-            this.PlayerStatusLabel.Content = gameplay.GetPlayerStatus();
-            this.EnemyStatusLabel.Content = gameplay.GetEnemyStatus();
-            this.AddPlayerCards();
-            this.AddPlayerCards();
-            this.AddPlayerCards();
-            this.AddEnemyCards();
-            this.AddEnemyCards();
-            this.AddEnemyCards();
+            this.DisplayAllStatus();
+            this.DrawPlayerCards();
+            this.DrawEnemyCards();
         }
 
-        private void AddPlayerCards()
+        private void DisplayAllStatus()
+        {
+            this.PlayerStatusLabel.Content = gameplay.GetPlayerStatus();
+            this.EnemyStatusLabel.Content = gameplay.GetEnemyStatus();
+        }
+
+        private void DrawPlayerCards()
+        {
+            this.PlayerCardsStackPanel.Children.Clear();
+            List<Card> hand = gameplay.GetPlayerHand();
+            for (int i = 0; i < hand.Count; i++)
+            {
+                this.AddPlayerCard(hand[i], i);
+            }
+        }
+
+        private void DrawEnemyCards()
+        {
+            this.EnemyCardsStackPanel.Children.Clear();
+            List<Card> hand = gameplay.GetEnemyHand();
+            foreach (Card card in hand)
+            {
+                this.AddEnemyCard(card);
+            }
+        }
+
+        private void AddPlayerCard(Card newCard, int cardIndex)
         {
             Button card1 = new Button();
             Image cardImage = new Image();
-            cardImage.Source = new BitmapImage(new Uri(@"C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\gun_card.png"));
+            cardImage.Source = new BitmapImage(new Uri(newCard.Source, UriKind.Relative));
             card1.Content = cardImage;
-            //card1.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\gun_card.png")));
             card1.Width = 3 * 60;
             card1.Height = 4 * 60;
-            card1.MouseEnter += OnMouseOver;
+            card1.Click += OnCardSelect;
+            card1.Tag = cardIndex;
             PlayerCardsStackPanel.Children.Add(card1);
         }
 
-        private void AddEnemyCards()
+        private void AddEnemyCard(Card newCard)
         {
             Button card1 = new Button();
             Image cardImage = new Image();
-            cardImage.Source = new BitmapImage(new Uri(@"C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\gun_card.png"));
+            cardImage.Source = new BitmapImage(new Uri(@".\card-back-ii.jpg", UriKind.Relative));
             card1.Content = cardImage;
-            //card1.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\gun_card.png")));
             card1.Width = 3 * 60;
             card1.Height = 4 * 60;
-            card1.MouseEnter += OnMouseOver;
             EnemyCardsStackPanel.Children.Add(card1);
         }
 
-        private void OnMouseOver(Object sender, EventArgs e)
+        private void OnCardSelect(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            //button.Height = 150;
+            Button cardButton = (Button)sender;
+            int cardIndex = (int)cardButton.Tag;
+            Gameplay.WinState result = gameplay.PlayCard(cardIndex);
+            if (result != Gameplay.WinState.WinnerNone)
+            {
+                GameOver(result);
+            }
+            PlayerCardsStackPanel.Children.Remove(cardButton);
+            this.DisplayAllStatus();
+            this.DrawPlayerCards();
+            this.DrawEnemyCards();
+        }
+
+        private void GameOver(Gameplay.WinState winner)
+        {
+            string winMsg = "";
+            switch (winner)
+            {
+                case Gameplay.WinState.WinnerPlayer :
+                    winMsg = PlayerNameLabel.Content.ToString();
+                    break;
+                case Gameplay.WinState.WinnerEnemy:
+                    winMsg = EnemyNameLabel.Content.ToString();
+                    break;
+            }
+            winMsg += " won!!";
+            MessageBox.Show(winMsg, "Winner!");
+            this.Close();
         }
     }
 }

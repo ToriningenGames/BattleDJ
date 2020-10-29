@@ -1,62 +1,20 @@
-C:\Users\benmi\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.exe.config
-C:\Users\benmi\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.exe
-C:\Users\benmi\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.pdb
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\MainWindow.g.cs
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\App.g.cs
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.cache
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.lref
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\MainWindow.baml
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.g.resources
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.Properties.Resources.resources
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.exe
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.pdb
-C:\Users\benmi\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
-C:\Users\ThomasWilson\Documents\BattleDJ\bin\Debug\ScorpCamp.exe.config
-C:\Users\ThomasWilson\Documents\BattleDJ\bin\Debug\ScorpCamp.exe
-C:\Users\ThomasWilson\Documents\BattleDJ\bin\Debug\ScorpCamp.pdb
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\MainWindow.g.cs
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\App.g.cs
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.cache
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.lref
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\MainWindow.baml
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp.g.resources
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp.Properties.Resources.resources
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp.exe
-C:\Users\ThomasWilson\Documents\BattleDJ\obj\Debug\ScorpCamp.pdb
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.exe
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.pdb
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\MainWindow.g.cs
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\App.g.cs
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.cache
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.lref
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\bin\Debug\ScorpCamp.exe.config
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\bin\Debug\ScorpCamp.exe
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\bin\Debug\ScorpCamp.pdb
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\MainWindow.baml
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.g.resources
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.Properties.Resources.resources
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
-C:\Users\alexa\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.exe.config
-C:\Users\alexa\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.exe
-C:\Users\alexa\Documents\DevJam\BattleDJ\bin\Debug\ScorpCamp.pdb
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\MainWindow.g.cs
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\App.g.cs
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.cache
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.lref
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\MainWindow.baml
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.g.resources
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.Properties.Resources.resources
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.exe
-C:\Users\alexa\Documents\DevJam\BattleDJ\obj\Debug\ScorpCamp.pdb
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\GameplayWindow.g.cs
-C:\Users\Tasslefoot\Desktop\New folder\BattleDJ\obj\Debug\GameplayWindow.baml
+D:\Documents\Battle-DevJam\BattleDJ\bin\Debug\ScorpCamp.exe.config
+D:\Documents\Battle-DevJam\BattleDJ\bin\Debug\ScorpCamp.exe
+D:\Documents\Battle-DevJam\BattleDJ\bin\Debug\ScorpCamp.pdb
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\GameplayWindow.g.cs
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\MainWindow.g.cs
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\App.g.cs
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.cache
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp_MarkupCompile.lref
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\GameplayWindow.baml
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\MainWindow.baml
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.g.resources
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.Properties.Resources.resources
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.GenerateResource.cache
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CoreCompileInputs.cache
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.exe
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.pdb
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.csprojAssemblyReference.cache
+D:\Documents\Battle-DevJam\BattleDJ\bin\Debug\Microsoft.VisualStudio.LiveShare.dll
+D:\Documents\Battle-DevJam\BattleDJ\bin\Debug\Microsoft.VisualStudio.LiveShare.xml
+D:\Documents\Battle-DevJam\BattleDJ\obj\Debug\ScorpCamp.csproj.CopyComplete

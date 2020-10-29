@@ -51,7 +51,7 @@ namespace ScorpCamp
                 1000,
                 new List<Card>
                 {
-                    new StaticDamageCard("Gun", "gun_card.png", -99)
+                    new StaticDamageCard("Gun", "gun_card.png", -9999999)
                 }
             ));
             characters.Add(new Character(

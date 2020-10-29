@@ -15,10 +15,11 @@ using System.Windows.Shapes;
 namespace ScorpCamp
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
         CharacterSelect characterSelection;
         public MainWindow()
         {
@@ -73,9 +74,11 @@ namespace ScorpCamp
         {
             GameplayWindow gameplayWindow =
                 new GameplayWindow(characterSelection.Player, characterSelection.Enemy);
-            gameplayWindow.Owner = this;
             
+            gameplayWindow.Owner = this;
             gameplayWindow.Show();
+            this.characterSelection = new CharacterSelect();
+            DrawCharacters();
         }
     }
 }

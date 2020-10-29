@@ -15,14 +15,14 @@
             <ColumnDefinition Width="155*"/>
             <ColumnDefinition Width="320*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="PlayerNameLabel" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.555,2.166" Margin="0,70,0,0" Height="26" Width="309" HorizontalContentAlignment="Center"/>
-        <Label x:Name="EnemyNameLabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="0,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.336,-0.387" Height="26" Width="310" HorizontalContentAlignment="Center"/>
-        <Image x:Name="PlayerImage" Margin="209.5,119,9.5,201" RenderTransformOrigin="-0.16,0.016">
+        <Label x:Name="PlayerNameLabel" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.555,2.166" Margin="0,70,0,0" Height="26" Width="309" HorizontalContentAlignment="Center" Background="#BF23F797"/>
+        <Label x:Name="EnemyNameLabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="0,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.336,-0.387" Height="26" Width="310" HorizontalContentAlignment="Center" Background="#BF23F797"/>
+        <Image x:Name="PlayerImage" Margin="109.5,169,109.5,151" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleX="-2" ScaleY="2"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
+                    <ScaleTransform ScaleY="2" ScaleX="-2"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>

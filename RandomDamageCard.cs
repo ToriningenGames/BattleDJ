@@ -25,8 +25,7 @@ namespace ScorpCamp
 
         public override int GetDamage()
         {
-            Random r = new Random();
-            return r.Next(minDamage, maxDamage);
+            return RNG.random.Next(minDamage, maxDamage);
         }
     }
 }
