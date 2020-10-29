@@ -41,13 +41,21 @@ namespace ScorpCamp
         private void PlayerTurn(int cardIndex)
         {
             Card actionCard = this.player.PlayCard(cardIndex);
-            int damage = actionCard.GetDamage();
-            if (damage < 0)
+            if (actionCard.GetType() == typeof(DamageBuffCard))
             {
-                this.enemy.Health += damage;
-            } else
+                player.damageBuff += actionCard.GetDamage();
+            }
+            else
             {
-                this.player.Health += damage;
+                int damage = actionCard.GetDamage();
+                if (damage < 0)
+                {
+                    this.enemy.Health += damage + player.damageBuff;
+                }
+                else
+                {
+                    this.player.Health += damage;
+                }
             }
         }
 

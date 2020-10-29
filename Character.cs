@@ -18,6 +18,8 @@ namespace ScorpCamp
         private List<Card> deck;
 
         private List<Card> hand;
+        public int damageBuff
+        { get; set; }
 
         public List<Card> Hand
         { get => this.hand; }
@@ -47,6 +49,7 @@ namespace ScorpCamp
             this.source = source;
             this.health = health;
             this.deck = deck;
+            this.damageBuff = 0;
             this.MaxHealth = health;
             this.hand = new List<Card>();
             this.GetImage = new Image

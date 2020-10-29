@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("waah.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("measureattack.png")]
 
 

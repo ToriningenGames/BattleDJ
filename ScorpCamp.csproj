@@ -61,6 +61,7 @@
     </ApplicationDefinition>
     <Compile Include="Character.cs" />
     <Compile Include="CharacterSelect.cs" />
+    <Compile Include="DamageBuffCard.cs" />
     <Compile Include="Gameplay.cs" />
     <Compile Include="GameplayWindow.xaml.cs">
       <DependentUpon>GameplayWindow.xaml</DependentUpon>
@@ -166,6 +167,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Waah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Whacker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mihalik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Chandler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MeasureBuff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MeasureAttack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

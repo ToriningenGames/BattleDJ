@@ -87,6 +87,25 @@ namespace ScorpCamp
                     new StaticDamageCard("Hat", "Waah.png", 12)
                 }
             ));
+            characters.Add(new Character(
+                "Mr. Beard",
+                "Mihalik.png",
+                70,
+                new List<Card>
+                {
+                    new RandomDamageCard("Weed Whacker", "Whacker.png", -100, -1)
+                }
+            ));
+            characters.Add(new Character(
+                "Chandler with a Tape Measure",
+                "Chandler.png",
+                42,
+                new List<Card>
+                {
+                    new DamageBuffCard("Extend", "MeasureBuff.png", -3),
+                    new StaticDamageCard("TapeMeasure", "MeasureAttack.png", -3),
+                }
+            ));
 
             return characters;
         }
