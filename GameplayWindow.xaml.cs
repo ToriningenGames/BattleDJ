@@ -70,26 +70,31 @@ namespace ScorpCamp
 
         private void AddPlayerCard(Card newCard, int cardIndex)
         {
-            Button card1 = new Button();
             Image cardImage = new Image();
             cardImage.Source = new BitmapImage(new Uri(newCard.Source, UriKind.Relative));
-            card1.Content = cardImage;
-            card1.Width = 3 * 60;
-            card1.Height = 4 * 60;
-            card1.Click += OnCardSelect;
-            card1.Tag = cardIndex;
-            PlayerCardsStackPanel.Children.Add(card1);
+
+            Button card = CreateCardButton(cardImage);
+            card.Click += OnCardSelect;
+            card.Tag = cardIndex;
+            PlayerCardsStackPanel.Children.Add(card);
         }
 
         private void AddEnemyCard(Card newCard)
         {
-            Button card1 = new Button();
             Image cardImage = new Image();
             cardImage.Source = new BitmapImage(new Uri(@".\card-back-ii.jpg", UriKind.Relative));
-            card1.Content = cardImage;
-            card1.Width = 3 * 60;
-            card1.Height = 4 * 60;
-            EnemyCardsStackPanel.Children.Add(card1);
+            EnemyCardsStackPanel.Children.Add(CreateCardButton(cardImage));
+        }
+
+        private Button CreateCardButton(Image displayImage)
+        {
+            Button button = new Button();
+
+            button.Content = displayImage;
+            button.Width = 3 * 60;
+            button.Height = 4 * 60;
+
+            return button;
         }
 
         private void OnCardSelect(object sender, EventArgs e)

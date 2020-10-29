@@ -67,30 +67,37 @@ namespace ScorpCamp
 
         public List<Card> GetPlayerHand()
         {
-            if (this.player.Hand.Count == 0)
-            {
-                this.player.DealHand();
-            };
-            return this.player.Hand;
+            return this.GetHand(this.player);
         }
 
         public List<Card> GetEnemyHand()
         {
-            if (this.enemy.Hand.Count == 0)
+            return this.GetHand(this.enemy);
+        }
+
+        private List<Card> GetHand(Character character)
+        {
+            if (character.Hand.Count == 0)
             {
-                this.enemy.DealHand();
-            };
-            return this.enemy.Hand;
+                character.DealHand();
+            }
+
+            return character.Hand;
         }
 
         public string GetPlayerStatus()
         {
-            return this.player.Health + "/" + this.player.MaxHealth;
+            return this.GetStatus(this.player);
         }
 
         public string GetEnemyStatus()
         {
-            return this.enemy.Health + "/" + this.enemy.MaxHealth;
+            return this.GetStatus(this.enemy);
+        }
+
+        private string GetStatus(Character character)
+        {
+            return character.Health + "/" + character.MaxHealth;
         }
 
         private WinState IsWinner()
