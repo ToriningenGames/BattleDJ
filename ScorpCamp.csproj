@@ -156,10 +156,16 @@
     <Resource Include="milk_heal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindow.cs" />
+    <Resource Include="card-back-ii.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="card-back-ii.jpg" />
+    <Resource Include="McGrew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Umbrella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Waah.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

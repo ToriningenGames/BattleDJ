@@ -115,17 +115,21 @@ namespace ScorpCamp
         private void GameOver(Gameplay.WinState winner)
         {
             string winMsg = "";
+            string winTitle = "";
             switch (winner)
             {
                 case Gameplay.WinState.WinnerPlayer :
                     winMsg = PlayerNameLabel.Content.ToString();
+                    winTitle = "Player";
                     break;
                 case Gameplay.WinState.WinnerEnemy:
                     winMsg = EnemyNameLabel.Content.ToString();
+                    winTitle = "Enemy";
                     break;
             }
             winMsg += " won!!";
-            MessageBox.Show(winMsg, "Winner!");
+            winTitle += " is the Winner!";
+            MessageBox.Show(winMsg, winTitle);
             this.Close();
         }
     }

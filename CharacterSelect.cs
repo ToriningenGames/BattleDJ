@@ -77,6 +77,16 @@ namespace ScorpCamp
                     new RandomDamageCard("Bow", "Bow.png", -8, -2)
                 }
             ));
+            characters.Add(new Character(
+                "McGroogle",
+                "McGrew.png",
+                25,
+                new List<Card>
+                {
+                    new StaticDamageCard("Umbrella", "Umbrella.png", -40),
+                    new StaticDamageCard("Hat", "Waah.png", 12)
+                }
+            ));
 
             return characters;
         }
